@@ -24,6 +24,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.D121211090.edition.data.models.QuranEdition
+import com.D121211090.edition.ui.theme.Purple80
 import com.D121211090.edition.ui.theme.QuranEditionTheme
 
 
@@ -57,59 +58,52 @@ class DetailActivity: ComponentActivity()  {
                 contentAlignment = Alignment.Center,
                 modifier = Modifier
                     .fillMaxWidth()
-//                    .background()
+                    .background(color = Purple80)
                     .padding(8.dp)
             ) {
                 Text(
-                    text = selectedQuranEdition?.englishName.toString(),
-                    style = MaterialTheme.typography.displayMedium,
+                    text = selectedQuranEdition?.identifier.toString(),
+                    style = MaterialTheme.typography.displaySmall,
                     fontWeight = FontWeight.Bold,
                     textAlign = TextAlign.Center,
-                    color = Color.White
+                    color = Color.Black
                 )
             }
-
             Spacer(modifier = Modifier.height(4.dp))
             Text(
-                text = "Direction: ${selectedQuranEdition?.direction?.toString()}",
-                style = MaterialTheme.typography.bodyMedium,
-                fontWeight = FontWeight.Bold
+                text = "Language: ${selectedQuranEdition?.language?.toString()}",
+                style = MaterialTheme.typography.titleLarge,
+                fontWeight = FontWeight.Normal
             )
             Spacer(modifier = Modifier.height(4.dp))
             Text(
                 text = "English Name: ${selectedQuranEdition?.englishName?.toString()}",
-                style = MaterialTheme.typography.bodyMedium,
-                fontWeight = FontWeight.Bold
-            )
-            Spacer(modifier = Modifier.height(4.dp))
-            Text(
-                text = "Format: ${selectedQuranEdition?.format?.toString()}",
-                style = MaterialTheme.typography.bodyMedium,
-                fontWeight = FontWeight.Bold
-            )
-            Spacer(modifier = Modifier.height(4.dp))
-            Text(
-                text = "Identifier: ${selectedQuranEdition?.identifier?.toString()}",
-                style = MaterialTheme.typography.bodyMedium,
-                fontWeight = FontWeight.Bold
-            )
-            Spacer(modifier = Modifier.height(4.dp))
-            Text(
-                text = "Language: ${selectedQuranEdition?.language?.toString()}",
-                style = MaterialTheme.typography.bodyMedium,
-                fontWeight = FontWeight.Bold
+                style = MaterialTheme.typography.titleLarge,
+                fontWeight = FontWeight.Normal
             )
             Spacer(modifier = Modifier.height(4.dp))
             Text(
                 text = "Name: ${selectedQuranEdition?.name?.toString()}",
-                style = MaterialTheme.typography.bodyMedium,
-                fontWeight = FontWeight.Bold
+                style = MaterialTheme.typography.titleLarge,
+                fontWeight = FontWeight.Normal
+            )
+            Spacer(modifier = Modifier.height(4.dp))
+            Text(
+                text = "Format: ${selectedQuranEdition?.format?.toString()}",
+                style = MaterialTheme.typography.titleLarge,
+                fontWeight = FontWeight.Normal
             )
             Spacer(modifier = Modifier.height(4.dp))
             Text(
                 text = "Type: ${selectedQuranEdition?.type?.toString()}",
-                style = MaterialTheme.typography.bodyMedium,
-                fontWeight = FontWeight.Bold
+                style = MaterialTheme.typography.titleLarge,
+                fontWeight = FontWeight.Normal
+            )
+            Spacer(modifier = Modifier.height(4.dp))
+            Text(
+                text = "Direction: ${selectedQuranEdition?.direction?.toString()}",
+                style = MaterialTheme.typography.titleLarge,
+                fontWeight = FontWeight.Normal
             )
         }
     }
